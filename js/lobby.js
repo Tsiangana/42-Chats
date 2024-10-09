@@ -16,5 +16,5 @@
         if (!inviteCode) {
             inviteCode = String(Math.floor(Math.random() * 10000))
         }
-        window.location = `room.php?room=${inviteCode}`
+        window.location = `room.html?room=${inviteCode}`
     })

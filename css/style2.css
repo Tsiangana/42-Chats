@@ -78,7 +78,7 @@ body{
   top: 0;
   left: 0;
   height: 100%;
-  width: 5.9%;
+  width: 4%;
   background-color: #ffffff13;
   backdrop-filter: blur(15px);
   display: flex;
@@ -141,7 +141,7 @@ body{
     position: absolute;
     right: 0;
     height: 100vh;
-    width: 94.5%;
+    width: 96.2%;
     background: var(--transparent);
     box-shadow: var(--shadow);
     border-radius: 15px 0 0 15px;
@@ -222,7 +222,7 @@ body{
     padding: 10px;
 }
 .container_father .main .content .main_content .item1 {
-    grid-column: span 9;
+    grid-column: span 2;
     padding: 10px;
     overflow-y: auto;
     /*overflow-x: hidden;*/
@@ -237,97 +237,8 @@ body{
     box-shadow: var(--shadow);
 }
 
-.container_father .main .content .main_content .item1 .videocall footer{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    font-weight: 600;
-    font-size: 1.4rem;
-    /*background-color: #1a1a1a60;*/
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .active{
-    color: var(--blue);
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .vol{
-    background-color: var(--white);
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    color: var(--blue);
-    box-shadow: var(--shadow);
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .main_icons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .main_icons .icon:nth-child(3){
-    background: rgb(182, 33, 33);
-    width: 45px;
-    height: 35px;
-    color: var(--white);
-    border: 1px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0 10px;
-    box-shadow: var(--shadow);
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .main_icons .icon:nth-child(1),
-.icon:nth-child(2), .icon:nth-child(4), .icon:nth-child(5){
-    background-color: var(--transparent);
-    backdrop-filter: blur(5px);
-    box-shadow: var(--shadow);
-    border: 1px solid #fff;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    color: var(--white);
-    font-weight: 800;
-    margin: 0 10px;
-    transition: .3s linear;
-    text-shadow: var(--shadow);
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .main_icons .icon:nth-child(1):hover,
-.icon:nth-child(2):hover, .icon:nth-child(4):hover, .icon:nth-child(5):hover{
-    color: var(--blue);
-    transition: .3s linear;
-}
-
-.container_father .main .content .main_content .item1 .videocall footer .extra{
-    background-color: var(--white);
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    color: var(--black);
-    box-shadow: var(--shadow);
-}
-  
 .container_father .main .content .main_content .item2 {
-    grid-column: span 3;
+    grid-column: span 8;
     padding: 10px;
 }
 
@@ -347,6 +258,18 @@ body{
     box-shadow: var(--shadow);
     margin-top: 10px;
     height: 87vh;
+}
+
+.container_father .main .content .main_content .item4 {
+    grid-column: span 2;
+    overflow-y: auto;
+    height: 97%;
+    margin-top: 10px;
+    background: var(--transparent);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    /*overflow-x: hidden;*/
 }
 
 .container_father .main .content .item3 .active {

@@ -1,31 +1,3 @@
-<?php
- include 'config.php';
- session_start();
- 
- // Verificar se o usuário está logado
- if (!isset($_SESSION['user_id'])) {
-     // Redirecionar para a página de login se não estiver logado
-     header("Location: index.php");
-     exit();
- }
- 
- // Obter o ID do usuário da sessão
- $user_id = $_SESSION['user_id'];
- 
- // Consultar o banco de dados para obter os dados do usuário
- $query = "SELECT * FROM users WHERE id = '$user_id'";
- $result = mysqli_query($conn, $query);
- 
- if ($result && mysqli_num_rows($result) > 0) {
-     $user = mysqli_fetch_assoc($result);
-     $name = $user['nome'];
-     $photo = $user['foto'];
- } else {
-     // Redirecionar para a página de login se não for possível obter os dados do usuário
-     header("Location: index.php");
-     exit();
- }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo/logo.png" type="image/x-icon">
-    <title>VEchat</title>
+    <title>42-Chats</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/elements.css">
@@ -64,22 +35,22 @@
         <div class="main">
 
             <div class="sidebar">
-                <div class="logo">VE</div>
+                <div class="logo">42</div>
                   <div class="icons">
                     <i class="bi bi-person-fill" id="menu-btn"></i>
                     <i class="bi bi-bell-fill"></i>
-                    <i class="bi bi-house-fill active"></i>
+                    <i class="bi bi-house-check-fill"></i>
                     <i class="bi bi bi-send-fill" onclick="redirectToPage()"></i>
                     <i class="bi bi-chat-fill"></i>
                   </div>
-                  <div class="icons"><a href="logout.php" style="text-decoration: none;"><i class="bi bi-door-open-fill"></i></a></div>
+                  <div class="icons" onclick="redirectToPage()"><i class="bi bi-door-open-fill"></i></a></div>
             </div>
 
             <div class="content">
                 <nav>
                     <div class="perfil">
-                        <div><img src="<?php echo $photo; ?>" alt="user photograph"></div>
-                        <p><span><?php echo $name; ?></span></p>
+                        <div><img src="Foto de perfil" alt="user"></div>
+                        <p><span>Name</span></p>
                     </div>
                 </nav>
                 <div class="main_content">
@@ -113,18 +84,12 @@
                                 </div>-->
                             </div>
                             <footer>
-                                <div class="vol">
-                                    <i class="bi bi-volume-up-fill"></i>
-                                </div>
-                                <div class="main_icons">
+                                <div class="main_icons" style="display: none;">
                                     <span class="icon"><i class="bi bi-back active"  id="screen-btn"></i></span>
                                     <span class="icon"><i class="bi bi-mic-mute-fill active" id="mic-btn"></i></span>
                                     <span class="icon"><i class="bi bi-telephone-fill" id="leave-btn"></i></span>
                                     <span class="icon" id="part"><i class="bi bi-camera-video-off-fill active" id="camera-btn"></i></span>
                                     <span class="icon"><i class="bi bi-eye-fill active" id="join-btn"></i></span>
-                                </div>
-                                <div class="extra">
-                                    <i class="bi bi-gear-fill"></i>
                                 </div>
                             </footer>
                         </div>
@@ -148,6 +113,9 @@
                        </div>
                       </main>
                     </div>
+                    <div class="item4" id="teste1"></div>
+                    </div>
+                    </div>
                 </div>
             </div>
 
@@ -162,7 +130,7 @@
 <script type="text/javascript" src="js/room.js"></script>
 <script type="text/javascript" src="js/room_rtm.js"></script>
 <script type="text/javascript" src="js/room_rtc.js"></script>
-<script>function redirectToPage() {window.location.href = "lobby.php";}
+<script>function redirectToPage() {window.location.href = "lobby.html";}
 </script>
 </body>
 </html>
