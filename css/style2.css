@@ -1,0 +1,360 @@
+/* project VEchar
+/* Made by eliseu
+/* date: 08/03/2023
+/* Copyrights
+/* CSS
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --blue: #a2d0eb;
+    --white: #fff;
+    --shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --black: #333;
+    --circle: 20px;
+    --border: 1px solid rgba(255, 255, 255, 0.5);
+    --transparent: #ffffff1e;
+    --letter: 'Tilt Neon', cursive;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container_father{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+    overflow: hidden;
+}
+
+.container_father .color{
+    position: absolute;
+    filter: blur(150px);
+}
+
+.container_father .color:nth-child(1){
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: var(--blue);
+}
+
+.container_father .color:nth-child(2){
+    bottom: 0px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #fffd87;
+}
+
+.container_father .color:nth-child(3){
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #1a547e;
+}
+
+/*O container principal transparente de fundo*/ 
+.main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+/*Fim container principal transparente de fundo*/ 
+
+
+/*inicio da barra de navegação*/ 
+.container_father .main .sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5.9%;
+  background-color: #ffffff13;
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /*box-shadow: var(--shadow);*/
+}
+
+.container_father .main .sidebar .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.container_father .main .sidebar .icons i {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #fff;
+    text-shadow: var(--shadow);
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.container_father .main .sidebar .icons i:hover{
+    color: #a2d0eb;
+    transition: .3s linear;
+}
+
+.container_father .main .sidebar .icons i.selected {
+    color: #a2d0eb; /* ou qualquer outra cor que você queira usar */
+    border-right: 2px solid #a2d0eb;
+    padding-right: 80%;
+    padding-left: 80%;
+}
+
+.container_father .main .sidebar .icons i.active{
+    color: #a2d0eb; /* ou qualquer outra cor que você queira usar */
+    border-right: 2px solid #a2d0eb;
+    padding-right: 80%;
+    padding-left: 80%;
+}
+
+.container_father .main .sidebar .logo {
+    color: #fff;
+    text-shadow: var(--shadow);
+    font-size: 24px;
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    cursor: pointer;
+}  
+/*Fim da barra de navegação*/ 
+
+/* container principal */
+.container_father .main .content{
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 94.5%;
+    background: var(--transparent);
+    box-shadow: var(--shadow);
+    border-radius: 15px 0 0 15px;
+}
+
+.container_father .main .content nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.container_father .main .content nav .perfil div:first-child{
+    width: 30px;
+    height: 30px;
+    background-color: var(--white);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.container_father .main .content nav .perfil{
+    display: flex;
+    position: absolute;
+    left: 30px;
+}
+
+.container_father .main .content nav div:first-child img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.container_father .main .content nav .perfil p{
+    color: var(--white);
+    width: 150px;
+    font-family: var(--letter);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    text-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.container_father .main .content nav i{
+    color: var(--white);
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.container_father .main .content nav button i{
+    font-size: 1rem;
+    color: var(--white);
+    margin-right: -15px;
+}
+.container_father .main .content nav button span{
+    font-family: var(--letter);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: var(--white);
+    margin-right: -15px;
+}
+
+.container_father .main .content .main_content{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    height: 93vh;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+.container_father .main .content .main_content .item1 {
+    grid-column: span 9;
+    padding: 10px;
+    overflow-y: auto;
+    /*overflow-x: hidden;*/
+}
+
+.container_father .main .content .main_content .item1 .videocall{
+    width: 100%;
+    height: 100%;
+    background: var(--transparent);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.container_father .main .content .main_content .item1 .videocall footer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    /*background-color: #1a1a1a60;*/
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .active{
+    color: var(--blue);
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .vol{
+    background-color: var(--white);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--blue);
+    box-shadow: var(--shadow);
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .main_icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .main_icons .icon:nth-child(3){
+    background: rgb(182, 33, 33);
+    width: 45px;
+    height: 35px;
+    color: var(--white);
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+    box-shadow: var(--shadow);
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .main_icons .icon:nth-child(1),
+.icon:nth-child(2), .icon:nth-child(4), .icon:nth-child(5){
+    background-color: var(--transparent);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow);
+    border: 1px solid #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 800;
+    margin: 0 10px;
+    transition: .3s linear;
+    text-shadow: var(--shadow);
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .main_icons .icon:nth-child(1):hover,
+.icon:nth-child(2):hover, .icon:nth-child(4):hover, .icon:nth-child(5):hover{
+    color: var(--blue);
+    transition: .3s linear;
+}
+
+.container_father .main .content .main_content .item1 .videocall footer .extra{
+    background-color: var(--white);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--black);
+    box-shadow: var(--shadow);
+}
+  
+.container_father .main .content .main_content .item2 {
+    grid-column: span 3;
+    padding: 10px;
+}
+
+.container_father .main .content .main_content .item2 .message{
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.container_father .main .content .main_content .item3{
+    display: none;
+    grid-column: span 2;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-top: 10px;
+    height: 87vh;
+}
+
+.container_father .main .content .item3 .active {
+    display: flex;
+}
+
+.container_father .main .content .item1 .active {
+    grid-column: span 7;
+}
+/* fim do container principal */
+

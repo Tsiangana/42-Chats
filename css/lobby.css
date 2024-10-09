@@ -1,0 +1,787 @@
+/* project VEchar
+/* Made by eliseu
+/* date: 08/03/2023
+/* Copyrights
+/* CSS
+*/
+
+:root{
+    --blue: #a2d0eb;
+    --white: #fff;
+    --shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --black: #333;
+    --circle: 30px;
+    --border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tilt Neon', cursive;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .block{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #444;
+    box-shadow: var(--shadow);
+    border-radius: var(--circle);
+}
+
+.container .block:nth-child(3n + 1){
+    background: var(--blue);
+}
+
+.container .block:nth-child(3n + 2){
+    background: #fffd87;
+}
+
+.container .block:nth-child(3n + 3){
+    background: #1a547e;
+}
+
+.container .content{
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    background: var(--white);
+    background-color: #6bdbdb3a;
+    border-radius: var(--circle);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
+    width: 70%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.container .content .img{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .content .img img{
+    width: 88%;
+}
+
+.container .content .circleBtn{
+    margin-left: 15px;
+    border-radius: 5px;
+    background: var(--white);
+    font-size: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 7.5px 15px;
+    box-shadow: var(--shadow);
+    color: var(--blue);
+    transition: .3s linear;
+    border: none;
+}
+
+.container .content .circleBtn a{
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.container .content .circleBtn a:hover{
+    color: var(--white);
+}
+
+.container .content .circleBtn:hover{
+    background-color: var(--blue);
+    color: var(--white);
+    transition: .3s linear;
+}
+
+.container .content .text{
+    width: 50%;
+    height: 100%;
+    background: var(--white);
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    /*display: none;*/
+}
+
+.container .content .text2{
+    width: 50%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.container .content .text .text0 h1{
+    text-align: center;
+}
+
+.container .content .text .text0 img{
+    width: 250px;
+}
+
+.container .content .text .text1{
+    text-align: center;
+    /*display: none;*/
+}
+
+.container .content .text img{
+    width: 100px;
+}
+
+.container .content .text h1{
+    color: var(--blue);
+    font-size: 24px;
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.container .content .text h3{
+    color: var(--blue);
+    font-size: 18px;
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 0 35px 0 35px;
+}
+
+.container .content .text p{
+    color: #444;
+    font-size: 14px;
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 0 35px 0 35px;
+}
+
+.container .content .text p a{
+    font-size: 10px;
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+
+/* Hide the default checkbox */
+
+.container1 input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border-radius: 5px;
+   }
+   
+   .container1 {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px rgb(183, 183, 183);
+   }
+   
+   /* Create a custom checkbox */
+   .checkmark {
+    position: relative;
+    top: -10px;
+    left: 35px;
+    height: 1.3em;
+    width: 1.3em;
+    background-color: #ccc;
+    border-radius: 5px;
+   }
+   
+   /* When the checkbox is checked, add a blue background */
+   .container1 input:checked ~ .checkmark {
+    box-shadow: 3px 3px 0px rgb(183, 183, 183);
+    transition: all 0.2s;
+    opacity: 1;
+    background-image: linear-gradient(45deg, rgb(100, 61, 219) 0%, rgb(217, 21, 239) 100%);
+   }
+   
+   .container1 input ~ .checkmark {
+    transition: all 0.2s;
+    opacity: 1;
+    box-shadow: 1px 1px 0px rgb(183, 183, 183);
+   }
+   
+   /* Create the checkmark/indicator (hidden when not checked) */
+   .checkmark:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s;
+   }
+   
+   /* Show the checkmark when checked */
+   .container1 input:checked ~ .checkmark:after {
+    opacity: 1;
+    transition: all 0.2s;
+   }
+   
+   /* Style the checkmark/indicator */
+   .container1 .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+   }
+
+   /* buttons */
+
+   .cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+   }
+   
+   .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+   }
+   
+   .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+    width: 100%;
+    background: #b1dae7;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active {
+    transform: scale(0.95);
+   }
+
+   /* FORMULARIO DE SIGN UP */
+
+   .form-container__sign-app-buttons svg {
+    width: 22px;
+    height: auto;
+  }
+  
+  .google svg {
+    width: 18px;
+    height: auto;
+  }
+  
+  .form-container {
+    min-width: 350px;
+    box-sizing: border-box;
+    font-family: 'Tilt Neon', cursive;
+    color: var(--white);
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+  }
+  
+  .form-container p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+  
+  .top-line {
+    padding-top: 12px;
+  }
+  
+  .form-container__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  
+  .form-container__form input {
+    height: 31px;
+    border: none;
+    border-radius:  var(--circle);
+    box-shadow: var(--shadow);
+    padding: 4px;
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 1.65;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+  
+  .form-container__form input:focus {
+    border-color: #00a6fd;
+    outline: 0;
+    box-shadow: none;
+  }
+  
+  .form-container__register-buttons {
+    display: flex;
+    column-gap: 10px;
+  }
+  
+  .form-container__sign {
+    padding: 8px 20px;
+    font-size: 14px;
+    line-height: 1.65;
+    border-radius: 20px;
+    width: 110px;
+    white-space: nowrap;
+    background-color: var(--white);
+    border: none;
+    color: var(--blue);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s linear;
+  }
+  
+  .form-container__sign:first-child:active,
+  .form-container__sign:first-child:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: .3s linear;
+  }
+  
+  .form-container__sign:focus {
+    outline-offset: -2px;
+    outline: none;
+    -webkit-box-shadow: inset 0 0 3px 1px #97dbff;
+    box-shadow: inset 0 0 3px 1px #97dbff;
+  }
+  
+  .forgot {
+    width: auto;
+    padding: 8px 0;
+    background: none;
+    font-weight: 400;
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .forgot:hover {
+    text-decoration: underline;
+    color: #4c9dd0;
+  }
+  
+  .form-container__header {
+    padding-bottom: 16px;
+  }
+  
+  .form-container__footer {
+    padding-top: 12px;
+    border-top: 1px solid #cacaca;
+  }
+  
+  .form-container__sign-app-buttons {
+    display: flex;
+    column-gap: 24px;
+  }
+  
+  .form-container__sign-app-buttons button:not(:first-child) {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-container__sign-app-buttons button:not(:first-child)::before {
+    position: absolute;
+    content: '';
+    width: 120%;
+    height: 2px;
+    background: rgb(187, 187, 187);
+    bottom: 0;
+    opacity: 0;
+  }
+  
+  .form-container__sign-app-buttons button:not(:first-child):hover::before {
+    opacity: 1;
+    transition: 1s;
+  }
+  
+  .form-container__sign-app-buttons button:not(:first-child):focus::before {
+    opacity: 1;
+    background-color: #4b4b4b;
+  }
+  
+  .form-container__sign-app-buttons button:first-child {
+    justify-content: center;
+    min-width: 110px;
+    height: 40px;
+    border: none;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 1px #b7b7b7;
+    display: flex;
+    align-items: center;
+    color: #4b4b4b;
+    font-size: 13px;
+    column-gap: 15px;
+    cursor: pointer;
+  }
+  
+  .form-container__sign-app-buttons button:first-child:active {
+    background: #eeeeee;
+  }
+  
+  .form-container__sign-app-buttons button:first-child:focus:not(:active) {
+    outline: none;
+    -webkit-box-shadow: inset 0 0 3px 1px #97dbff;
+    box-shadow: inset 0 0 3px 1px #97dbff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /* Initial form state */
+.form {
+    --col1: var(--blue);
+    --col2: #252325;
+    --col3: none;
+    --col4: var(--blue);
+    --col5: #fff;
+    --sh: rgba(80, 80, 80, 0.35);
+    --rad: 4px;
+    --radBig: 10px;
+    border-radius: 0 0 var(--radBig) var(--radBig);
+    box-shadow: 0 0 20px var(--sh);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em 1em;
+    padding: 1em;
+    position: relative;
+    max-width: 75%;
+    max-height: 90px;
+    transition: background .3s ease-out, max-height .3s ease-out;
+    overflow: hidden;
+  }
+  
+  .form::before {
+    content: 'Create New Room or Join';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+  }
+  
+  .form::after {
+    content: '';
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    z-index: 999;
+  }
+  
+  .form::after,
+  .form::before {
+    border-radius: 0 0 var(--radBig) var(--radBig);
+    pointer-events: none;
+    transition: all .5s ease-out;
+  }
+  
+  /* Form hover and focus */
+  .form:hover,
+  .form:focus-within {
+    max-width: 100%;
+    max-height: 380px;
+  }
+  
+  .form:focus-within {
+    overflow: initial;
+  }
+  
+  .form:hover::before,
+  .form:hover::after {
+    opacity: 0;
+  }
+  
+  .form:hover::after {
+    backdrop-filter: blur(0) grayscale(0%);
+  }
+  
+  .form header {
+    color: var(--col1);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  /* Labels and inputs UI */
+  :is(.form) label span, label input {
+    flex: 1 100%;
+    transition: all .3s ease-out;
+  }
+  
+  :is(.form) input, select, button {
+    appearance: none;
+    border: 0;
+    padding: .75em;
+    border-radius: var(--circle);
+    transition: all .3s ease-out;
+  }
+  
+  .form label {
+    display: flex;
+    flex-flow: row wrap;
+    color: var(--col4);
+    gap: .5em;
+  }
+  
+  .form input {
+    box-shadow: var(--shadow);
+  }
+  
+  .form fieldset {
+    display: flex;
+    backdrop-filter: blur(10px);
+    flex-flow: row nowrap;
+    gap: 1em;
+    position: relative;
+    transition: all .3s ease-out;
+    padding: 1rem;
+    z-index: 10;
+    border: 3px double var(--col1);
+    border-radius: var(--rad);
+  }
+  
+  .form fieldset label {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: .75em;
+  }
+  
+  .sm {
+    justify-content: space-around;
+  }
+  
+  .sm span {
+    text-align: center;
+  }
+  
+  .form select {
+    box-shadow: inset 3px 3px 1px var(--sh);
+    padding: .75em 1.75em .75em 0.5em;
+    position: relative;
+  }
+  
+  .custom-select {
+    position: relative;
+  }
+  
+  .custom-select::after {
+    position: absolute;
+    content: "";
+    top: 45%;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: var(--col5) transparent transparent transparent;
+  }
+  
+  .form fieldset span {
+    flex: 1 100%;
+  }
+  
+  .form fieldset input {
+    flex: 0 1 40px;
+  }
+  
+  .form button {
+    background-color: var(--col1);
+    color: var(--col4);
+    border: 2px solid var(--col4);
+    font-size: 1em;
+    font-weight: 700;
+    align-self: center;
+    padding: .5em 1.5em;
+    appearance: none;
+  }
+  
+  /* Form and UI valid and invalid states */
+  .form input:focus,
+  .form select:focus {
+    outline: 3px solid var(--col3);
+    outline-offset: 1px;
+  }
+  
+  .form input:invalid:not(:focus),
+  .form select:invalid:not(:focus) {
+    background-color: var(--col3);
+    outline: 3px solid var(--col4);
+    outline-offset: 1px;
+  }
+  
+  .form input:valid:not(:focus),
+  .form select:valid:not(:focus) {
+    outline: 3px solid var(--col1);
+    outline-offset: 1px;
+  }
+  
+  .form .message {
+    display: block;
+    opacity: 0;
+    font-size: .75em;
+    font-weight: 400;
+    transition: all .3s ease-out;
+    margin: -1rem 0 0;
+  }
+  
+  .form:has(:invalid) .message {
+    opacity: 1;
+    margin: .25rem 0 0 0;
+  }
+  
+  label:has(input:invalid),
+  label:has(select:invalid) {
+    color: var(--col3);
+    opacity: .8;
+  }
+  
+  label:has(input:valid),
+  label:has(select:valid) {
+    opacity: 1;
+  }
+  
+  .form:hover:has(:focus, :active):valid .submitCard {
+    max-height: 180px;
+    opacity: 1;
+    transition: opacity 1s ease-out .5s, translate 1.3s ease-out;
+    translate: 0 100%;
+  }
+  
+  .form:hover:invalid {
+    transition: all .3s ease-out;
+    background-color: var(--col5);
+  }
+  
+  .form:hover:valid {
+    transition: all .3s ease-out;
+    background-color: var(--col1);
+  }
+  
+  .form:hover:valid * {
+    color: var(--col2);
+  }
+  
+  .form:hover:valid input,
+  .form:hover:valid select {
+    outline: 3px solid var(--col2);
+  }
+  
+  .form:hover:invalid fieldset {
+    border: 1px dashed var(--col3);
+  }
+  
+  .form:hover:valid fieldset {
+    border: 1px dashed var(--col2);
+  }
+  
+  /* Submit block */
+  .form .submitCard {
+    display: flex;
+    justify-content: center;
+    background-color: var(--col2);
+    border-radius: 0 0 var(--rad) var(--rad);
+    bottom: 0;
+    padding: .5em;
+    opacity: 0;
+    max-height: 0;
+    translate: 0 -100%;
+    position: absolute;
+    width: calc(100% - 2em);
+    transition: all .5s ease-out .1s;
+    z-index: -1;
+  }

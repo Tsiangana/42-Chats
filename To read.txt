@@ -1,0 +1,24 @@
+Requisitos para usar:
+Apps:
+Xampp
+mysql
+
+Instrução:
+após a instalação desses aplicativos, dirigi-se a pasta xampp que foi criada no seu disco C, do
+computador e abra a pasta htdocs que estiver lá dentro e em seguida cole a pasta do projecto que voce fez
+o download no github. Em seguida abra a pasta db do projecto e dê 2 clicks no arquivo que encontra afim de 
+instalar a base de dados.
+
+após isso, abra o arquivo xampp control que esta dentro da pasta do xampp e click no botão start das opcções
+apache, mysql.
+
+após isso é só abrires o navegador e e digitar:
+localhost/_digite_aqui_o_nome_da_pasta_do_arquivo
+exemplo:
+localhost/plantie
+
+
+boa sorte e me segue no github para mais projectos como esse e estou sempre
+aberto a críticas ou convites para criação de qualquer projeto quer seja em grupo ou a solo.
+
+boas noitee!!!!

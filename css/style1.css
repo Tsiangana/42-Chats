@@ -1,0 +1,375 @@
+/* project VEchar
+/* Made by eliseu
+/* date: 08/03/2023
+/* Copyrights
+/* CSS
+*/
+
+:root{
+    --blue: #a2d0eb;
+    --white: #fff;
+    --shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --black: #333;
+    --circle: 30px;
+    --border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+    padding: 50px;
+    margin-top: -30px;
+    overflow: hidden;
+}
+
+.container .color{
+    position: absolute;
+    filter: blur(150px);
+}
+
+.container .color:nth-child(1){
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: var(--blue);
+}
+
+.container .color:nth-child(2){
+    bottom: 0px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #fffd87;
+}
+
+.container .color:nth-child(3){
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #1a547e;
+}
+
+.container .content{
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    background-color: #6bdbdb3a;
+    border-radius: var(--circle);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .content .box{
+    width: 50%;
+    height: 90%;
+}
+
+.container .content .box:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1{
+    position: relative;
+}
+
+.box1 .square{
+    position: absolute;
+    /*backdrop-filter: blur(5px);*/
+    box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+    border: var(--border);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+    0%,100%{
+        transform: translateY(-40px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+}
+
+.box1 .square:nth-child(1){
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+}
+
+.box1 .square:nth-child(2){
+    top: 150px;
+    left: -100px;
+    width: 120px;
+    height: 120px;
+    z-index: 99999;
+}
+
+.box1 .square:nth-child(3){
+    bottom: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 9999999999;
+}
+
+.box1 .square:nth-child(4){
+    bottom: -70px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.box1 .square:nth-child(5){
+    top: -75px;
+    left: 140px;
+    width: 60px;
+    height: 60px;
+}
+
+.container1{
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+    border: var(--border);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.form h2{
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.form h2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: var(--white);
+}
+
+.form .inputBox{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form .inputBox input{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: var(--border);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 13.5px;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.form .inputBox input::placeholder{
+    color: var(--white);
+}
+
+.form .inputBox input[type="submit"], #change2{
+    background: #fff;
+    color: #666;
+    max-width: 100px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 15%;
+}
+
+.forget:nth-child(1){
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.password{
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*border: 1px solid black;*/
+}
+
+.buttons .inputBox{
+    /*border: 1px solid black;*/
+    padding-right: -30px;
+}
+
+.buttons .inputBox input:nth-child(1):hover{
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: var(--border);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 13.5px;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    transition: .3s;
+}
+
+.buttons .inputBox input:nth-child(1){
+    transition: .3s;
+}
+
+a .forget1{
+    text-align: right;
+}
+
+a .forget{
+    color: var(--white);
+    font-weight: 400;
+}
+
+.container .box img{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    transition: opacity 3s ease-in-out;
+    opacity: 1;
+}
+
+.container .box h1, h3{
+    color: var(--white);
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    margin-left: 35px;
+    margin-top: 5px;
+}
+
+.container .box h6{
+    color: var(--white);
+    font-family: 'Tilt Neon', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    text-align: center;
+    margin-top: -5px;
+} 
+
+.particles{
+    position: relative;
+    display: flex;
+    /*z-index: 1;*/
+    padding: 0px 20px;
+}
+
+.particles span{
+    position: relative;
+    bottom: 30px;
+    width: 30px;
+    height: 30px;
+    background: #4fc2dc7a;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc2dc65,
+    -100px 0 #4fc3dc44,
+    100px 0 #1a547e88;
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate2 15s ease infinite;
+    animation-duration: calc(125s / var(--i));
+    backdrop-filter: blur(5px);
+}
+
+.particles span:nth-child(even){
+    background: #fffd87 ;
+    box-shadow: 0 0 0 10px #fffd8798,
+    0 0 50px #fffd8798,
+    -100px 0 #4fc2dc88,
+    100px 0 #4fc2dc46;
+    backdrop-filter: blur(5px);
+}
+
+.container1 .form .sign{
+    display: none;
+    animation: .3s  ease-in-out;
+}
+
+
+
+.container1 .active1 form {
+    display: none;
+}
+
+
+
+
+
+
+@keyframes animate2 {
+    0%{
+        transform: translateY(120vh) scale(0) rotate(0deg);
+    }
+    20%{
+        transform: translateY(100vh) scale(1) rotate(0deg);
+    }
+    100%{
+        transform: translateY(-50vh) scale(0.5) rotate(360deg);
+    }
+}

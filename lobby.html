@@ -1,0 +1,82 @@
+<?php
+session_start();
+
+// Verificar se o usuário está logado
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your Romm or Join</title>
+    <link rel="shortcut icon" href="img/logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lobby.css">
+</head>
+<body>
+
+    <!-- Voce deve manter uma página html -->
+
+    <div class="container" id="room__lobby__container">
+        <div class="content" style="width: 40%;height: 80vh; display: flex;align-items: center;justify-content: center;background: none;" id="form__container">
+            <form class="form" id="lobby__form" onmouseover="generate()">
+                <header>
+                  Credit card information
+                <span class="message">Fill the form to continue.</span>
+                </header>
+                <label>
+                  <span>Name</span>
+                  <input placeholder="Enter your display name..." class="input" type="text" required="" name="name">
+                </label>
+                <label>
+                  <span>Room name</span>
+                  <input placeholder="Enter room name..." class="input" type="text"  name="room">
+                </label>
+                <hr style="width: 400px;margin-top: 70px;">
+                <div class="submitCard form__field__wrapper">
+                  <button type="submit">Create Room or Join</button>
+                </div>
+              </form>
+        </div>
+    
+</div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let container = document.querySelector('.container');
+        for (let i = 0; i <= 80; i++) {
+            let blocks = document.createElement('div');
+            blocks.classList.add('block');
+            container.appendChild(blocks);
+        }
+
+        function generate() {
+            anime({
+                targets: '.block',
+                translateX: function () {
+                    return anime.random(-700,700);
+                },
+                translateY: function () {
+                    return anime.random(-500,500);
+                },
+                scale: function () {
+                    return anime.random(1,5);
+                }
+            })
+        }
+        generate()
+
+    </script>
+    <script src="js/lobby.js"></script>
+    
+</body>
+</html>
