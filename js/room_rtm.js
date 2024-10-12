@@ -91,7 +91,7 @@
     }
 
     let addBotMessageToDom = async (botMessage) => {
-        let messagesWrapper = document.getElementById('messages')
+        let messagesWrapper = document.getElementById('Welcome_all')
 
         let newMessage = `<div class="message__wrapper">
                             <div class="message__body__bot">
